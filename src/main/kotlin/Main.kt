@@ -1,9 +1,8 @@
 import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
 import com.github.kotlintelegrambot.dispatcher.command
-import com.github.kotlintelegrambot.entities.ChatId
-import com.github.kotlintelegrambot.entities.ParseMode
-
+import com.github.kotlintelegrambot.entities.*
+import com.github.kotlintelegrambot.entities.polls.PollType
 
 fun main() {
     println("- Bot Iniciado -")
@@ -59,27 +58,29 @@ fun main() {
 
             command("bichosexualidad") {
 
-                var verificacionBichosexualidad = 1
                 val respuesta_bichosexualidad1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bienvenido a la calculadora de Bichosexualidad")
                 val respuesta_bichosexualidad2 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Aquí veremos que tan grande es tu % de compatibilidad con El Bicho")
-                val respuesta_bichosexualidad3 = """
-                    *¿Cuantas veces piensas en El Bicho al día?*
-                    *A* | Una o ninguna vez al día.
-                    *B* | Entre 2 a 5 veces al día.
-                    *C* | Sobre 10 veces al día.
-                    *D* | Mi vida consiste en pensar en él.
-                """.trimIndent()
-                bot.sendMessage(
-                        chatId = ChatId.fromId(message.chat.id),
-                        text = respuesta_bichosexualidad3,
-                        parseMode = ParseMode.MARKDOWN
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿El Bicho o Messi?",
+                    options = listOf("Messi", "El Bicho"),
+                    correctOptionId = 1,
+                    isAnonymous = true
                 )
-                /*
-                text {
-                    bot.sendMessage(chatId = ChatId.fromId(message.chat.id), text = text)
-                }
-                 */
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Cuantos balones de Oro tiene el Bicho?",
+                    options = listOf("2", "7", "5"),
+                    correctOptionId = 2,
+                    isAnonymous = true
+                )
+
             }
+
         }
     }
     bot.startPolling()
