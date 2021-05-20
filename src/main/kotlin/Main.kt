@@ -92,7 +92,6 @@ fun main() {
                 val respuesta_dados = bot.sendDice(chatId = ChatId.fromId(update.message!!.chat.id), DiceEmoji.Football)
 
             }
-
         }
     }
     bot.startPolling()
