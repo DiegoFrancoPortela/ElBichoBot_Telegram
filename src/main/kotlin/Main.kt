@@ -5,7 +5,17 @@ import com.github.kotlintelegrambot.entities.*
 import com.github.kotlintelegrambot.entities.dice.DiceEmoji
 import com.github.kotlintelegrambot.entities.polls.PollType
 
+/**
+ * EL Bicho es un Bot de Telegram creado en Kotlin
+ * Para su funcionamiento se ha usado la librería:
+ * https://github.com/kotlin-telegram-bot/kotlin-telegram-bot
+ * @version 1.0, 21/05/21
+ * @author Diego Franco
+ * @author Gabriel Domínguez
+ */
+
 fun main() {
+    //[Consola] - Verificar lanzamiento del BOT
     println("- Bot Iniciado -")
 
     val bot = bot {
@@ -14,6 +24,9 @@ fun main() {
 
         dispatch {
 
+            /**
+             * Comando /help
+             */
             command("help") {
                 val help = """
                     */saludo* | El Bicho te saluda!
@@ -33,12 +46,19 @@ fun main() {
                 )
             }
 
+            /**
+             * Comando /saludo
+             */
             command("saludo") {
 
                 val respuesta_saludo1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "EL BICHOOOOOOO")
                 val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/xT1XGVp95GDPgFYmUE/giphy.gif" )
 
             }
+
+            /**
+             * Comando /vamosadormir
+             */
             command("vamosadormir") {
 
                 val respuesta_vamosadormir1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "BOA NOITE")
@@ -46,24 +66,36 @@ fun main() {
 
             }
 
+            /**
+             * Comando /abdominales
+             */
             command("abdominales") {
 
                 val respuesta_abdominales = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://i.pinimg.com/originals/63/9f/28/639f282e144c61fc5ff1a4d3482c952e.gif" )
 
             }
 
+            /**
+             * Comando /piernas
+             */
             command("piernas") {
 
                 val respuesta_piernas = bot.sendPhoto(chatId = ChatId.fromId(update.message!!.chat.id), "https://hips.hearstapps.com/dm.h-cdn.co/assets/17/43/980x735/sd-aspect-1509033894-cristiano-1.jpg?resize=480:*" )
 
             }
 
+            /**
+             * Comando /encuesta
+             */
             command("encuesta") {
 
                 val respuesta_encuesta = bot.sendPoll(chatId = ChatId.fromId(update.message!!.chat.id), "¿Quién es el jugador más sexy?", listOf("Cristiano Ronaldo","Cristiano Ronaldo","También Cristiano Ronaldo"), isAnonymous = true, type = null, allowsMultipleAnswers = false, correctOptionId = null, isClosed = null, disableNotification = null, replyToMessageId = null, replyMarkup= null)
 
             }
 
+            /**
+             * Comando /bichosexualidad
+             */
             command("bichosexualidad") {
 
                 val respuesta_bichosexualidad1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bienvenido a la calculadora de Bichosexualidad")
@@ -89,6 +121,9 @@ fun main() {
 
             }
 
+            /**
+             * Comando /conocerCR7
+             */
             command("conocerCR7") {
 
                 val respuesta_bichosexualidad1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bienvenido a este pequeño test")
@@ -123,19 +158,25 @@ fun main() {
                 )
 
             }
+
+            /**
+             * Comando /penalti
+             */
             command("penalti") {
 
                 val respuesta_dados = bot.sendDice(chatId = ChatId.fromId(update.message!!.chat.id), DiceEmoji.Football)
 
             }
 
+            /**
+             * Comando /champions
+             */
             command("champions") {
 
                 val respuesta_champions1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "5 5 5 Championsssss del Bichooo")
                 val respuesta_champions2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/fG5pWz51IU0qftnVk1/giphy.gif" )
 
             }
-
         }
     }
     bot.startPolling()
