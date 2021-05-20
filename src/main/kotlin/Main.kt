@@ -2,6 +2,7 @@ import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
 import com.github.kotlintelegrambot.dispatcher.command
 import com.github.kotlintelegrambot.entities.*
+import com.github.kotlintelegrambot.entities.dice.DiceEmoji
 import com.github.kotlintelegrambot.entities.polls.PollType
 
 fun main() {
@@ -20,11 +21,11 @@ fun main() {
                     */champions* | Cantidad de Champions del Bicho
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
-                    */su* | Te envío un audio especial ;)
                     */encuesta* | Quién es el jugador mas guapo?
                     */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
                     */conocerCR7* | Te hace un test sobre el BICHOO
+                    */penalti* | Tira un penalti como El Bicho
                 """.trimIndent()
                 bot.sendMessage(
                         chatId = ChatId.fromId(message.chat.id),
@@ -42,7 +43,7 @@ fun main() {
             command("vamosadormir") {
 
                 val respuesta_vamosadormir1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "BOA NOITE")
-                val respuesta_vamosadormir2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://fotografias.antena3.com/clipping/cmsimages02/2016/11/25/E49E040B-096B-4B43-93D8-2B69E2B0DFFF/58.jpg" )
+                val respuesta_vamosadormir2 = bot.sendPhoto(chatId = ChatId.fromId(update.message!!.chat.id), "https://fotografias.antena3.com/clipping/cmsimages02/2016/11/25/E49E040B-096B-4B43-93D8-2B69E2B0DFFF/58.jpg" )
 
             }
 
@@ -121,6 +122,11 @@ fun main() {
                     correctOptionId = 2,
                     isAnonymous = true
                 )
+
+            }
+            command("penalti") {
+
+                val respuesta_dados = bot.sendDice(chatId = ChatId.fromId(update.message!!.chat.id), DiceEmoji.Football)
 
             }
         }
