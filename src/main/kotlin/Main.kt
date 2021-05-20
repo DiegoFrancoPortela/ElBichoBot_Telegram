@@ -21,7 +21,6 @@ fun main() {
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
                     */encuesta* | Quién es el jugador mas guapo?
-                    */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
                     */penalti* | Tira un penalti igual que El Bicho
                 """.trimIndent()
@@ -36,7 +35,6 @@ fun main() {
 
                 val respuesta_saludo1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "EL BICHOOOOOOO")
                 val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/xT1XGVp95GDPgFYmUE/giphy.gif" )
-
             }
 
             command("champions") {
