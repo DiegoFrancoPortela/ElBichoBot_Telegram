@@ -16,6 +16,7 @@ fun main() {
             command("help") {
                 val help = """
                     */saludo* | El Bicho te saluda!
+                    */vamosadormir* | El bicho te da las buenas noches!
                     */champions* | Cantidad de Champions del Bicho
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
@@ -35,6 +36,12 @@ fun main() {
 
                 val respuesta_saludo1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "EL BICHOOOOOOO")
                 val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/xT1XGVp95GDPgFYmUE/giphy.gif" )
+
+            }
+            command("vamosadormir") {
+
+                val respuesta_vamosadormir1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "BOA NOITE")
+                val respuesta_vamosadormir2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://fotografias.antena3.com/clipping/cmsimages02/2016/11/25/E49E040B-096B-4B43-93D8-2B69E2B0DFFF/58.jpg" )
 
             }
 
