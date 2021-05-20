@@ -33,7 +33,7 @@ fun main() {
                     */vamosadormir* | El bicho te da las buenas noches!
                     */champions* | Cantidad de Champions del Bicho
                     */abdominales* | Ay my madre! Abdominales del Bicho
-                    */piernas* | La piernas del Bicho?
+                    */piernas* | Las piernas del Bicho?
                     */encuesta* | Quién es el jugador mas guapo?
                     */bichosexualidad* | Mide tu compatibilidad
                     */conocerCR7* | Te hace un test sobre el BICHOO
