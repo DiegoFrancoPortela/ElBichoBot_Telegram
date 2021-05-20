@@ -16,6 +16,7 @@ fun main() {
             command("help") {
                 val help = """
                     */saludo* | El Bicho te saluda!
+                    */vamosadormir* | El bicho te da las buenas noches!
                     */champions* | Cantidad de Champions del Bicho
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
@@ -23,6 +24,7 @@ fun main() {
                     */encuesta* | Quién es el jugador mas guapo?
                     */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
+                    */conocerCR7* | Te hace un test sobre el BICHOO
                 """.trimIndent()
                 bot.sendMessage(
                         chatId = ChatId.fromId(message.chat.id),
@@ -35,6 +37,12 @@ fun main() {
 
                 val respuesta_saludo1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "EL BICHOOOOOOO")
                 val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/xT1XGVp95GDPgFYmUE/giphy.gif" )
+
+            }
+            command("vamosadormir") {
+
+                val respuesta_vamosadormir1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "BOA NOITE")
+                val respuesta_vamosadormir2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://fotografias.antena3.com/clipping/cmsimages02/2016/11/25/E49E040B-096B-4B43-93D8-2B69E2B0DFFF/58.jpg" )
 
             }
 
@@ -75,6 +83,41 @@ fun main() {
                     type = PollType.QUIZ,
                     question = "¿Cuantos balones de Oro tiene el Bicho?",
                     options = listOf("2", "7", "5"),
+                    correctOptionId = 2,
+                    isAnonymous = true
+                )
+
+            }
+
+            command("conocerCR7") {
+
+                val respuesta_bichosexualidad1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bienvenido a este pequeño test")
+                val respuesta_bichosexualidad2 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Aquí veremos que tanto conoces al BICHOOO")
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Equipo en el que debuto?",
+                    options = listOf("United", "Sporting Lisboa", "Madrid"),
+                    correctOptionId = 1,
+                    isAnonymous = true
+                )
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Equipo actual?",
+                    options = listOf("Juventus", "Madrid", "Chelsea"),
+                    correctOptionId = 0,
+                    isAnonymous = true
+                )
+
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Hijos que tiene?",
+                    options = listOf("1", "2", "3"),
                     correctOptionId = 2,
                     isAnonymous = true
                 )
