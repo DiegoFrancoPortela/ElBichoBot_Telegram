@@ -24,6 +24,7 @@ fun main() {
                     */encuesta* | Quién es el jugador mas guapo?
                     */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
+                    */conocerCR7* | Te hace un test sobre el BICHOO
                 """.trimIndent()
                 bot.sendMessage(
                         chatId = ChatId.fromId(message.chat.id),
@@ -82,6 +83,41 @@ fun main() {
                     type = PollType.QUIZ,
                     question = "¿Cuantos balones de Oro tiene el Bicho?",
                     options = listOf("2", "7", "5"),
+                    correctOptionId = 2,
+                    isAnonymous = true
+                )
+
+            }
+
+            command("conocerCR7") {
+
+                val respuesta_bichosexualidad1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bienvenido a este pequeño test")
+                val respuesta_bichosexualidad2 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Aquí veremos que tanto conoces al BICHOOO")
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Equipo en el que debuto?",
+                    options = listOf("United", "Sporting Lisboa", "Madrid"),
+                    correctOptionId = 1,
+                    isAnonymous = true
+                )
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Equipo actual?",
+                    options = listOf("Juventus", "Madrid", "Chelsea"),
+                    correctOptionId = 0,
+                    isAnonymous = true
+                )
+
+
+                bot.sendPoll(
+                    chatId = ChatId.fromId(message.chat.id),
+                    type = PollType.QUIZ,
+                    question = "¿Hijos que tiene?",
+                    options = listOf("1", "2", "3"),
                     correctOptionId = 2,
                     isAnonymous = true
                 )
