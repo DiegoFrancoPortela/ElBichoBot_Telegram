@@ -38,6 +38,12 @@ fun main() {
 
             }
 
+            command("champions") {
+
+                val respuesta_champions1 = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "5 5 5 Championsssss del Bichooo")
+                val respuesta_champions2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.giphy.com/media/fG5pWz51IU0qftnVk1/giphy.gif" )
+
+            }
 
             command("abdominales") {
 
