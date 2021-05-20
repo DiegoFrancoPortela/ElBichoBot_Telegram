@@ -2,6 +2,7 @@ import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
 import com.github.kotlintelegrambot.dispatcher.command
 import com.github.kotlintelegrambot.entities.*
+import com.github.kotlintelegrambot.entities.dice.DiceEmoji
 import com.github.kotlintelegrambot.entities.polls.PollType
 
 fun main() {
@@ -19,10 +20,10 @@ fun main() {
                     */champions* | Cantidad de Champions del Bicho
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
-                    */su* | Te envío un audio especial ;)
                     */encuesta* | Quién es el jugador mas guapo?
                     */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
+                    */penalti* | Tira un penalti igual que El Bicho
                 """.trimIndent()
                 bot.sendMessage(
                         chatId = ChatId.fromId(message.chat.id),
@@ -87,6 +88,13 @@ fun main() {
                 )
 
             }
+
+            command("penalti") {
+
+                val respuesta_dados = bot.sendDice(chatId = ChatId.fromId(update.message!!.chat.id), DiceEmoji.Football)
+
+            }
+
         }
     }
     bot.startPolling()
