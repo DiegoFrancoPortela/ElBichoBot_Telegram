@@ -38,6 +38,7 @@ fun main() {
 
             }
 
+
             command("abdominales") {
 
                 val respuesta_abdominales = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://i.pinimg.com/originals/63/9f/28/639f282e144c61fc5ff1a4d3482c952e.gif" )
@@ -80,7 +81,6 @@ fun main() {
                 )
 
             }
-
         }
     }
     bot.startPolling()
