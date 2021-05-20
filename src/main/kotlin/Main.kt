@@ -22,7 +22,6 @@ fun main() {
                     */abdominales* | Ay my madre! Abdominales del Bicho
                     */piernas* | La piernas del Bicho?
                     */encuesta* | Quién es el jugador mas guapo?
-                    */novia* | Meme de por que soy mejor que tu novia
                     */bichosexualidad* | Mide tu compatibilidad
                     */conocerCR7* | Te hace un test sobre el BICHOO
                     */penalti* | Tira un penalti como El Bicho
